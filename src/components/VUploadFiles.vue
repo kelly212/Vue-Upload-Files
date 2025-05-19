@@ -1,6 +1,6 @@
 <template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
 			<div>
-						<v-card class="drag-drop-container" theme="light">
+						<v-card class="drag-drop-container" :theme="theme">
 									<div id="drop-area" class="drop-area"
 														:class="{ 'highlight': isDragging }"
 														@dragenter.prevent="handleDragEnter"
@@ -63,6 +63,7 @@
       props: {
          text_add_html: {default: '<h5>Clique para selecionar.</h5>'},
          icone: {default: 'mdi-upload'},
+         theme: {default: 'light'},
          icone_size: {default: '50'},
          multiple: {default: true},
          show_enviar: {default: true},
