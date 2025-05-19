@@ -1,0 +1,48 @@
+{
+  "name": "v-upload-files",
+  "version": "0.0.1",
+  "description": "Componente Vue para upload de arquivos com suporte a arrastar e soltar, seleção via clique e múltiplos formatos.",
+  "author": "Kelly",
+  "main": "src/index.js",
+  "files": [
+    "src/**/*"
+  ],
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "test": "v-password-text test"
+  },
+  "dependencies": {
+    "vue": "^3.5.14",
+    "vuetify": "^3.8.5"
+  },
+  "devDependencies": {
+    "@mdi/font": "^7.4.47",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-router": "~5.0.0",
+    "@vue/cli-plugin-vuex": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "core-js": "^3.42.0",
+    "lodash": "latest",
+    "npm-check": "^6.0.1",
+    "roboto-fontface": "*",
+    "sass": "^1.79.4",
+    "sass-loader": "^16.0.2",
+    "vue-cli-plugin-vuetify": "~2.5.8",
+    "vue-router": "^4.5.1",
+    "vuex": "^4.0.0",
+    "webpack-plugin-vuetify": "^3.1.1"
+  },
+  "bugs": {
+    "url": "https://github.com/kelly212/Vue-Upload-Files/issues"
+  },
+  "homepage": "https://github.com/kelly212/Vue-Upload-Files#readme",
+  "keywords": [
+    "v-password-text"
+  ],
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kelly212/Vue-Upload-Files.git"
+  }
+}
