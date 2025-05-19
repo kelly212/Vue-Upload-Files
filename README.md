@@ -4,7 +4,7 @@
 Este componente Vue oferece uma interface elegante e funcional para upload de arquivos com suporte a drag and drop, visualização dos arquivos selecionados, remoção, e botão de envio. Compatível com múltiplos arquivos e personalizável.
 
 
-## 🚀 Funcionalidades
+## Funcionalidades
 * Arraste e solte arquivos diretamente na área de upload
 * Clique para selecionar arquivos manualmente
 * Pré-visualização de arquivos selecionados com ícone e tamanho
@@ -19,7 +19,7 @@ Para usar o componente em seu projeto Vue 3, instale o pacote via NPM:
 ```bash 
 npm install v-upload-files
 ``` 
-## Uso
+# Uso
 No seu projeto Vue, importe e registre o componente:
 
 ## Exemplo de Uso
@@ -61,7 +61,7 @@ export default defineComponent({
 | `text_add_html` | String  | Texto (com HTML) exibido na área de adicionar arquivos.         |
 
 
-## 📦 Métodos
+## Métodos
 
 | Método             | Descrição                                                                          |
 | ------------------ | ---------------------------------------------------------------------------------- |
