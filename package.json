@@ -1,6 +1,6 @@
 {
   "name": "v-upload-files",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Componente Vue para upload de arquivos com suporte a arrastar e soltar, seleção via clique e múltiplos formatos.",
   "author": "Kelly",
   "main": "src/index.js",
