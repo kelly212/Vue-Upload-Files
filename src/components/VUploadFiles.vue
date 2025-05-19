@@ -29,9 +29,9 @@
 																														<div class="preview-size">{{ formatFileSize(file.size) }}</div>
 																											</div>
 																								</v-card-text>
-																								<v-card-actions v-if="show_enviar && !multiple">
-																											<v-btn block variant="flat" size="small" @click="send" color="green">Enviar Arquivos</v-btn>
-																								</v-card-actions>
+																								<!--<v-card-actions v-if="show_enviar && !multiple">-->
+																											<!--<v-btn block variant="flat" size="small" @click="send" color="green">Enviar Arquivos</v-btn>-->
+																								<!--</v-card-actions>-->
 																					</v-card>
 																		</v-col>
 																		<v-col v-if="multiple ? true : files.length <= 0"  :cols="multiple? getColSize(files.length):12">
@@ -48,7 +48,7 @@
 															</v-row>
 												</div>
 									</div>
-									<v-card-actions v-if="show_enviar && multiple && files.length > 0">
+									<v-card-actions v-if="show_enviar  && files.length > 0">
 												<v-btn block variant="flat" size="small" @click="send" color="green">Enviar Arquivos</v-btn>
 									</v-card-actions>
 						</v-card>
