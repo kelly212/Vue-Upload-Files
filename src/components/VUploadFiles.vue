@@ -9,32 +9,32 @@
 														@drop.prevent="handleDrop"
 									>
 												<span style="color: gray">Arraste e solte um arquivo aqui ou clique para selecionar.</span>
-												<div >
+												<div>
 															<v-row>
-																		<v-col  :cols="multiple? getColSize(files.length):12" v-for="(file, index) in files" :key="index">
+																		<v-col :cols="multiple? getColSize(files.length):12" v-for="(file, index) in files" :key="index">
 																					<v-card style="margin:2%; height: 150px" class="preview-area">
-																								<v-card-title>
-																											<div style="float: right">
-																														<v-btn @click="removeFile(index)" color="red" variant="text" icon size="small">
-																																	<v-icon>mdi-delete</v-icon>
-																														</v-btn>
-																											</div>
-																								</v-card-title>
 																								<v-card-text>
-																											<div class="preview-info">
-																														<div class="preview-name">
-																																	<v-icon>{{ getFileIcon(file.name) }}</v-icon>
-																																	{{ file.name }}
-																														</div>
-																														<div class="preview-size">{{ formatFileSize(file.size) }}</div>
-																											</div>
+																											<v-list-item style="text-align: left">
+																														<v-list-item-title style="white-space: pre-wrap;">
+																																	<p class="">{{ cortarString(file.name, multiple?30:100) }}</p>
+																														</v-list-item-title>
+																														<v-list-item-subtitle>{{ formatFileSize(file.size) }}</v-list-item-subtitle>
+																														<template v-slot:prepend>
+																																	<v-avatar>
+																																				<v-icon>{{ getFileIcon(file.name) }}</v-icon>
+																																	</v-avatar>
+																														</template>
+																														
+																														<template v-slot:append>
+																																	<v-btn @click="removeFile(index)" color="red" variant="text" icon size="small">
+																																				<v-icon>mdi-delete</v-icon>
+																																	</v-btn>
+																														</template>
+																											</v-list-item>
 																								</v-card-text>
-																								<!--<v-card-actions v-if="show_enviar && !multiple">-->
-																											<!--<v-btn block variant="flat" size="small" @click="send" color="green">Enviar Arquivos</v-btn>-->
-																								<!--</v-card-actions>-->
 																					</v-card>
 																		</v-col>
-																		<v-col v-if="multiple ? true : files.length <= 0"  :cols="multiple? getColSize(files.length):12">
+																		<v-col v-if="multiple ? true : files.length <= 0" :cols="multiple? getColSize(files.length):12">
 																					<v-card class="drop-message" @click="openFileDialog">
 																								<div>
 																											<v-icon :size="icone_size">{{icone}}</v-icon>
@@ -43,7 +43,7 @@
 																																		ref="fileInput" :multiple="multiple">
 																								</div>
 																					</v-card>
-																				
+																		
 																		</v-col>
 															</v-row>
 												</div>
@@ -74,6 +74,15 @@
          atualizacao: [],
       }),
       methods: {
+         cortarString(str, tam) {
+            if (this.validarCampo(str)) {
+               if (str.length > tam) {
+                  str = str.slice(0, tam) + '...'
+               }
+            }
+            return str
+         },
+
          getFileIcon(filename) {
             const extension = filename.split('.').pop().toLowerCase();
 
@@ -112,13 +121,13 @@
             if (length >= 3) return 3;
             return 3; // fallback para 4 itens
          },
-      
+
          validarCampo(campo) {
             return (campo !== undefined && campo !== null && campo !== '')
          },
-         send(){
-            this.$emit('send',true)
-									},
+         send() {
+            this.$emit('send', true)
+         },
 
          openFileDialog() {
             this.$refs.fileInput.click()
@@ -131,13 +140,13 @@
                const reader = new FileReader()
                reader.readAsDataURL(files)
                reader.onload = e => {
-                
+
                   self.atualizacao.push({
                      src: e.target.result,
                      name: files.name
                   })
 
-                  this.$emit('upload',self.atualizacao)
+                  this.$emit('upload', self.atualizacao)
                }
             }
          },
@@ -168,8 +177,8 @@
          removeFile(index) {
             this.files.splice(index, 1);
             this.atualizacao.splice(index, 1);
-            this.$emit('upload',this.atualizacao)
-									},
+            this.$emit('upload', this.atualizacao)
+         },
          formatFileSize(bytes) {
             if (bytes === 0) return '0 Bytes';
 
@@ -205,7 +214,7 @@
 						border: 1px dashed #ccc;
 						height: 150px;
 						padding: 30px;
-						margin:2%;
+						margin: 2%;
 						color: gray;
 			}
 			
@@ -225,6 +234,7 @@
 			}
 			
 			.preview-info {
+						text-align: left;
 						flex-grow: 1;
 			}
 			
@@ -247,5 +257,6 @@
 						font-size: 0.8em;
 						color: #777;
 			}
+
 
 </style>
