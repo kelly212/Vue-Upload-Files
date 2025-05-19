@@ -58,7 +58,7 @@
 <script>
    /* eslint-disable */
    export default {
-      name: 'VPasswordText',
+      name: 'VUploadFiles',
       components: {},
       props: {
          text_add_html: {default: '<h5>Clique para selecionar.</h5>'},

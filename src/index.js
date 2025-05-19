@@ -1,3 +1,3 @@
-import VPasswordText from './components/VUploadFiles';
+import VUploadFiles from './components/VUploadFiles';
 
-export default VPasswordText;
+export default VUploadFiles;
