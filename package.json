@@ -10,7 +10,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "test": "v-password-text test"
+    "test": "v-upload-files test"
   },
   "dependencies": {
     "vue": "^3.5.14",
@@ -38,7 +38,7 @@
   },
   "homepage": "https://github.com/kelly212/Vue-Upload-Files#readme",
   "keywords": [
-    "v-password-text"
+    "v-upload-files"
   ],
   "license": "ISC",
   "repository": {

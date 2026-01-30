@@ -1,3 +1,3 @@
-import VUploadFiles from './components/VUploadFiles';
+import VUploadFiles from './components/VUploadFiles.vue';
 
 export default VUploadFiles;

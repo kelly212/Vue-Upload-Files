@@ -20,7 +20,7 @@ Para usar o componente em seu projeto Vue 3, instale o pacote via NPM:
 npm install v-upload-files
 ``` 
 # Uso
-No seu projeto Vue, importe e registre o componente:
+No seu projeto Vue, importe e registre o componente
 
 ## Exemplo de Uso
 Você pode usar o componente da seguinte maneira:

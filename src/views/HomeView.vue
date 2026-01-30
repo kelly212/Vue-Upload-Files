@@ -45,8 +45,5 @@ export default defineComponent({
          console.log('enviar');
       }
    },
-  mounted() {
-  
-  }
 });
 </script>
